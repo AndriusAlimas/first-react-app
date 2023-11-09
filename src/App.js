@@ -1,16 +1,21 @@
-import logo from "./logo.svg";
 import "./App.css";
+
+const reactDescriptions = ["Fundamental", "Crucial", "Core"];
+
+function genRandomInt(max) {
+  return Math.floor(Math.random() * (max + 1));
+}
 
 function Header() {
   return (
     <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <h1>React Essentials</h1>
-      <p>
-        React is a popular JavaScript library for building user interfaces,
-        particularly single-page applications where you need a fast interaction
-        with the user. .
-      </p>
+      <header>
+        <h1>React Essentials</h1>
+        <p>
+          {reactDescriptions[genRandomInt(reactDescriptions.length - 1)]} React
+          concepts you will need for almost any app you are going to build!
+        </p>
+      </header>
     </header>
   );
 }
