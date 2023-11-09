@@ -1,6 +1,12 @@
 import "./App.css";
+
+// import images
 import logoImg from "./assets/logo192.png";
 import componentsImage from "./assets/components.png";
+import configImage from "./assets/config.png";
+import stateImage from "./assets/state-mgmt.png";
+import jsxImage from "./assets/jsx-ui.png";
+
 const reactDescriptions = ["Fundamental", "Crucial", "Core"];
 
 function genRandomInt(max) {
@@ -11,7 +17,7 @@ function CoreConcept({ title, image, text }) {
   return (
     <li>
       <img src={image} alt={title} />
-      <h3>${title}</h3>
+      <h3>{title}</h3>
       <p>{text}</p>
     </li>
   );
@@ -45,9 +51,9 @@ function App() {
               title="React"
               text="This is my text"
             />
-            <CoreConcept />
-            <CoreConcept />
-            <CoreConcept />
+            <CoreConcept image={configImage} />
+            <CoreConcept image={stateImage} />
+            <CoreConcept image={jsxImage} />
           </ul>
         </section>
       </main>
