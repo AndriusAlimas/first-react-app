@@ -1,5 +1,5 @@
 import "./App.css";
-
+import LogoImg from "./assets/logo192.png";
 const reactDescriptions = ["Fundamental", "Crucial", "Core"];
 
 function genRandomInt(max) {
@@ -7,13 +7,16 @@ function genRandomInt(max) {
 }
 
 function Header() {
+  const description =
+    reactDescriptions[genRandomInt(reactDescriptions.length - 1)];
   return (
     <header className="App-header">
       <header>
+        <img src={LogoImg} alt="Stylized atom" className="App-logo" />
         <h1>React Essentials</h1>
         <p>
-          {reactDescriptions[genRandomInt(reactDescriptions.length - 1)]} React
-          concepts you will need for almost any app you are going to build!
+          {description} React concepts you will need for almost any app you are
+          going to build!
         </p>
       </header>
     </header>
