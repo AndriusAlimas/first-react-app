@@ -6,6 +6,10 @@ import TabButton from "./components/TabButton/TabButton";
 import { CORE_CONCEPTS } from "./data";
 
 function App() {
+  function handleClick(selectedButton) {
+    console.log("Clicked: ", selectedButton);
+  }
+
   return (
     <>
       <Header />
@@ -22,11 +26,14 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton>Components</TabButton>
-            <TabButton>JSX</TabButton>
-            <TabButton>Props</TabButton>
-            <TabButton>State</TabButton>
+            <TabButton onClick={() => handleClick("Components")}>
+              Components
+            </TabButton>
+            <TabButton onClick={() => handleClick("JSX")}>JSX</TabButton>
+            <TabButton onClick={() => handleClick("Props")}>Props</TabButton>
+            <TabButton onClick={() => handleClick("State")}>State</TabButton>
           </menu>
+          Dinamic Content
         </section>
       </main>
       <footer></footer>
