@@ -3,7 +3,7 @@ import CoreConcept from "./components/CoreConcept/CoreConcept";
 import Header from "./components/Header/Header";
 import TabButton from "./components/TabButton/TabButton";
 import { useState } from "react";
-import { CORE_CONCEPTS, EXAMPLES } from "./data";
+import { CORE_CONCEPTS, EXAMPLES, TOPICS } from "./data";
 
 function App() {
   const [selectedTopic, setSelectedTopic] = useState();
@@ -42,12 +42,30 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton onClick={() => handleClick("components")}>
+            <TabButton
+              isSelected={selectedTopic === TOPICS.COMPONENTS}
+              onClick={() => handleClick(TOPICS.COMPONENTS)}
+            >
               Components
             </TabButton>
-            <TabButton onClick={() => handleClick("jsx")}>JSX</TabButton>
-            <TabButton onClick={() => handleClick("props")}>Props</TabButton>
-            <TabButton onClick={() => handleClick("state")}>State</TabButton>
+            <TabButton
+              isSelected={selectedTopic === TOPICS.JSX}
+              onClick={() => handleClick(TOPICS.JSX)}
+            >
+              JSX
+            </TabButton>
+            <TabButton
+              isSelected={selectedTopic === TOPICS.PROPS}
+              onClick={() => handleClick(TOPICS.PROPS)}
+            >
+              Props
+            </TabButton>
+            <TabButton
+              isSelected={selectedTopic === TOPICS.STATE}
+              onClick={() => handleClick(TOPICS.STATE)}
+            >
+              State
+            </TabButton>
           </menu>
           {tabContent}
         </section>

@@ -79,3 +79,9 @@ function Counter() {
 }`,
   },
 };
+export const TOPICS = {
+  COMPONENTS: "components",
+  JSX: "jsx",
+  PROPS: "props",
+  STATE: "state",
+};
